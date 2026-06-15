@@ -12,9 +12,13 @@ class Uihelper {
     required FontWeight fontweigh,
     String? fontfamily,
     required double fontsize,
+    int? maxLines,
+    TextOverflow? overflow,
   }) {
     return Text(
       text,
+      maxLines: maxLines,
+      overflow: overflow,
       style: TextStyle(
         fontSize: fontsize,
         fontFamily: fontfamily ?? "regular",
@@ -42,6 +46,20 @@ class Uihelper {
           suffixIcon: Image.asset("assets/images/mic 1.png"),
           border: InputBorder.none,
         ),
+      ),
+    );
+  }
+  static CustomButton(VoidCallback callback,){
+    return Container(
+      height: 18,
+      width: 30,
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(4),
+        border: Border.all(color: Color(0XFF27AF34),),
+      ),
+      child: Center(
+        child: Text("ADD",style: TextStyle(fontSize: 8,color: Color(0XFF27AF34)),),
       ),
     );
   }
